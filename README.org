@@ -1,0 +1,57 @@
+#+TITLE: clj-async-decompiler
+
+Decompile your Clojure expressions from withing GNU Emacs.
+
+* Rationale
+
+  =clj-java-decompiler= is an awesome and useful utility.
+
+  What would be even more awesome is if we could invoke it interactively
+  from within Emacs and examine the results just like we do
+  macroexpansion.
+
+  A couple of hours of hacking later, having eaten a bit more of the
+  world, we can.
+
+* Usage
+
+  - Download the file or clone the repository (not registered on MELPA yet, sorry).
+  - load it as a hook for ~cider-mode~.
+  - ~(require 'clj-decompiler)~
+  - ~M-x clj-decompiler-decompile~ like you would ~cider-macroexpand~.
+
+  #+begin_src elisp
+    (load-file "path/to/clj-decompiler.el")
+    (add-hook
+     'cider-mode-hook
+     (lambda ()
+       (eval-after-load 'cider
+         '(progn
+            (require 'clj-decompiler)
+            (clj-decompiler-setup)))))
+  #+end_src
+
+** Spacemacs
+
+   #+begin_src elisp
+     (spacemacs|forall-clojure-modes m
+       (spacemacs/set-leader-keys-for-major-mode m
+         "ed" 'clj-decompiler-decompile)
+       (spacemacs/set-leader-keys-for-major-mode m
+         "eD" 'clj-decompiler-disassemble))
+   #+end_src
+
+* Credit
+
+  - All of CIDER's maintainers, past and present. You made this possible and easy.
+  - Alexander Yakushev for =clj-java-decompiler=, and many other awesome libraries.
+
+* Thanks
+
+  - Dan Sutton who helped me out on Clojurian's Slack.
+
+* Links
+
+  - [[http://clojure-goes-fast.com/blog/introspection-tools-java-decompilers/][Introspection tools: Java decompilers]]
+  - [[https://github.com/clojure-goes-fast/clj-java-decompiler][clj-java-decompiler]]
+  - [[https://cider.mx][CIDER]]
