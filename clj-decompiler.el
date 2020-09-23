@@ -120,6 +120,12 @@ This variable specifies both what was decompiled and the decompiler.")
       (clj-decompiler-initialize-decompile-buffer expansion))))
 
 ;;;###autoload
+(defun clj-decompiler-setup ()
+  "Ensure decompiler dependencies are injected to cider."
+  (interactive)
+  (clj-decompiler-ensure-decompiler-dependency))
+
+;;;###autoload
 (defun clj-decompiler-disassemble ()
   "Invoke \\=`disassemble\\=` on the expression preceding point."
   (interactive)
