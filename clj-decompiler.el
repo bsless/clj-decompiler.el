@@ -81,7 +81,9 @@
   "Eval the given EXPR and return the result from STDOUT."
   (cider-ensure-op-supported "eval")
   (let* ((resp (cider-nrepl-send-sync-request `("op" "eval" "code" ,expr))))
-    (message (nrepl-dict-get resp "out"))))
+    (or
+     (nrepl-dict-get resp "out")
+     (nrepl-dict-get resp "err"))))
 
 (defvar clj-decompiler-last-disassemble-expression nil
   "Specify the last disassembly preformed.
