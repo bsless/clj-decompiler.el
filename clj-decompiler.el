@@ -72,15 +72,10 @@
   "Ensure decompiler dependency will be jacked in."
   (when (and clj-decompiler-inject-dependencies-at-jack-in
              (boundp 'cider-jack-in-dependencies))
-    (if (assoc clj-decompiler-decompiler-artifact cider-jack-in-dependencies)
-        t
-      (setq cider-jack-in-dependencies
-            (append
-             cider-jack-in-dependencies
-             (list
-              (list
-               clj-decompiler-decompiler-artifact
-               clj-decompiler-decompiler-version)))))))
+    (cider-add-to-alist
+     'cider-jack-in-dependencies
+     clj-decompiler-decompiler-artifact
+     clj-decompiler-decompiler-version)))
 
 (defun clj-decompiler-sync-request:eval-out (expr)
   "Eval the given EXPR and return the result from STDOUT."
