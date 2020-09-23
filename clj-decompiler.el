@@ -6,7 +6,8 @@
 ;; Maintainer: Ben Sless <ben.sless@gmail.com>
 ;; URL: http://www.github.com/bsless/clj-decompiler.el
 ;; Keywords: languages, clojure, cider, java, decompiler
-;; Package-Requires: ((emacs "25") (clojure-mode "5.12") cider)
+;; Package-Requires: ((emacs "26.1") (clojure-mode "5.12") (cider "0.18.0"))
+;; Version: 0.0.1
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -88,7 +89,7 @@
      clj-decompiler-decompiler-artifact
      clj-decompiler-decompiler-version)))
 
-(defun clj-decompiler-sync-request:eval-out (expr)
+(defun clj-decompiler-sync-request-eval-out (expr)
   "Eval the given EXPR and return the result from STDOUT."
   (cider-ensure-op-supported "eval")
   (let* ((resp (cider-nrepl-send-sync-request `("op" "eval" "code" ,expr))))
@@ -109,7 +110,7 @@ This variable specifies both what was disassembled and the disassembler.")
                        clj-decompiler-namespace
                        clj-decompiler-disassemble-macro
                        expr)))
-    (when-let* ((expansion (clj-decompiler-sync-request:eval-out expr)))
+    (when-let* ((expansion (clj-decompiler-sync-request-eval-out expr)))
       (setq clj-decompiler-last-disassemble-expression expr)
       (clj-decompiler-initialize-disassemble-buffer expansion))))
 
@@ -126,7 +127,7 @@ This variable specifies both what was decompiled and the decompiler.")
                        clj-decompiler-namespace
                        clj-decompiler-decompile-macro
                        expr)))
-    (when-let* ((expansion (clj-decompiler-sync-request:eval-out expr)))
+    (when-let* ((expansion (clj-decompiler-sync-request-eval-out expr)))
       (setq clj-decompiler-last-decompile-expression expr)
       (clj-decompiler-initialize-decompile-buffer expansion))))
 
