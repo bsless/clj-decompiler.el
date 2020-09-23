@@ -1,8 +1,12 @@
-;;; clj-decompiler.el --- Decompiler expansion support -*- lexical-binding: t -*-
+;;; clj-decompiler.el --- Clojure Java decompiler expansion -*- lexical-binding: t -*-
 
 ;; Copyright © 2020-2020 Ben Sless
 ;;
 ;; Author: Ben Sless <ben.sless@gmail.com>
+;; Maintainer: Ben Sless <ben.sless@gmail.com>
+;; URL: http://www.github.com/bsless/clj-decompiler.el
+;; Keywords: languages, clojure, cider, java, decompiler
+;; Package-Requires: ((emacs "25") (clojure-mode "5.12") cider)
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -21,7 +25,14 @@
 
 ;;; Commentary:
 
-;; Decompiler support
+;; Provides interactive functions for decompiling Clojure on the JVM by
+;; loading them in the REPL and decompiling them with
+;; https://github.com/clojure-goes-fast/clj-java-decompiler
+
+;;; Usage:
+
+;; M-x clj-decompiler-decompile
+;; M-x clj-decompiler-disassemble
 
 ;;; Code:
 
