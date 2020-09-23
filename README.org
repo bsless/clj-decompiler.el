@@ -1,4 +1,4 @@
-#+TITLE: clj-async-decompiler
+#+TITLE: clj-java-decompiler In Emacs
 
 Decompile your Clojure expressions from withing GNU Emacs.
 
