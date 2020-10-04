@@ -4,7 +4,7 @@
 ;;
 ;; Author: Ben Sless <ben.sless@gmail.com>
 ;; Maintainer: Ben Sless <ben.sless@gmail.com>
-;; URL: http://www.github.com/bsless/clj-decompiler.el
+;; URL: https://www.github.com/bsless/clj-decompiler.el
 ;; Keywords: languages, clojure, cider, java, decompiler
 ;; Package-Requires: ((emacs "26.1") (clojure-mode "5.12") (cider "0.18.0"))
 ;; Version: 0.0.1
@@ -20,7 +20,7 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;; This file is not part of GNU Emacs.
 
