@@ -1,3 +1,5 @@
+[[https://melpa.org/#/clj-decompiler][file:https://melpa.org/packages/clj-decompiler-badge.svg]]
+
 #+TITLE: clj-java-decompiler In Emacs
 
 Decompile your Clojure expressions from withing GNU Emacs.
@@ -13,15 +15,33 @@ Decompile your Clojure expressions from withing GNU Emacs.
   A couple of hours of hacking later, having eaten a bit more of the
   world, we can.
 
+* Install
+
+** package.el
+
+   ~M-x package-install [RET] clj-decompiler [RET]~
+
+   If the package was not found, refresh the package list via:
+
+   ~M-x package-refresh-contents [RET]~
+
+** Manual
+
+   Either:
+   - Put ~clj-decompiler.el~ on your load-path and require it.
+   - Open ~clj-decompiler.el~ and ~M-x package-install-file~.
+
+** Spacemacs
+
+   Add ~clj-decompiler~ to ~dotspacemacs-additional-packages~.
+
 * Usage
 
-  - Download the file or clone the repository (not registered on MELPA yet, sorry).
-  - load it as a hook for ~cider-mode~.
+  - load ~clj-decompiler~ as a hook for ~cider-mode~.
   - ~(require 'clj-decompiler)~
   - ~M-x clj-decompiler-decompile~ like you would ~cider-macroexpand~.
 
   #+begin_src elisp
-    (load-file "path/to/clj-decompiler.el")
     (add-hook
      'cider-mode-hook
      (lambda ()
