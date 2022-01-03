@@ -6,7 +6,7 @@
 ;; Maintainer: Ben Sless <ben.sless@gmail.com>
 ;; URL: https://www.github.com/bsless/clj-decompiler.el
 ;; Keywords: languages, clojure, cider, java, decompiler
-;; Package-Requires: ((emacs "26.1") (clojure-mode "5.12") (cider "0.18.0"))
+;; Package-Requires: ((emacs "26.1") (clojure-mode "5.12") (cider "1.2.0"))
 ;; Version: 0.0.1
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -45,7 +45,6 @@
 
 (require 'cider-mode)
 (require 'subr-x)
-(require 'cider-compat)
 
 (defconst clj-decompiler-decompile-buffer "*clj-decompile*")
 (defconst clj-decompiler-disassemble-buffer "*clj-disassemble*")
